@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 db=SQLAlchemy(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dishes.sqlite3'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dishes.sqlite3'
 
 
 #create a table dishes in the database
