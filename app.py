@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 db=SQLAlchemy(app)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dishes.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dishes.sqlite3'
 
 
 #create a table dishes in the database
@@ -46,7 +46,6 @@ class Dishes(db.Model):
       self.dish_cost=dish_cost
       self.dish_image=dish_image
 
-db.create_all()
 
 
 #This error handler is used to display the   
@@ -165,4 +164,5 @@ def patch_dish(dish_id):
 
 
 if __name__ == "__main__":
- app.run()
+	db.create_all()
+	app.run()
